@@ -19,5 +19,11 @@
     "clean": {
       "cache": false
     }
+  },
+  "tasks": {
+    "mobile#build": {
+      "cache": false,
+      "outputs": []
+    }
   }
 }

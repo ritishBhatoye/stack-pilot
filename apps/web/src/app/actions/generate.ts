@@ -16,10 +16,10 @@ const configSchema = z.object({
 
 export async function generateAppAction(config: unknown) {
   const validatedConfig = configSchema.parse(config);
-  const apiKey = process.env.OPENAI_API_KEY;
+  const apiKey = process.env.GROQ_API_KEY;
 
   if (!apiKey) {
-    throw new Error("OPENAI_API_KEY is not set");
+    throw new Error("GROQ_API_KEY is not set");
   }
 
   try {

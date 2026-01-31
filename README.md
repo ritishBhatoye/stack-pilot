@@ -18,7 +18,7 @@ A production-ready monorepo demonstrating a modern Expo + Next.js + AI stack. Ge
 
 ### Backend / AI
 - **Edge-compatible API routes**
-- **OpenAI SDK** (GPT-4)
+- **Groq SDK** (Llama 3.1 70B)
 - **Streaming-friendly architecture**
 
 ### Monorepo
@@ -72,15 +72,20 @@ stack-pilot/
    ```
 
 3. **Set up environment variables**
+   
+   Create a `.env.local` file in the `apps/web/` directory:
    ```bash
-   cp .env.example .env
+   cd apps/web
+   touch .env.local
    ```
    
-   Edit `.env` and add your OpenAI API key:
+   Add your Groq API key to `apps/web/.env.local`:
    ```
-   OPENAI_API_KEY=your_key_here
+   GROQ_API_KEY=your_groq_api_key_here
    NEXT_PUBLIC_APP_NAME=Stack Pilot
    ```
+   
+   **Note:** The `.env.local` file is already gitignored, so your API key won't be committed.
 
 4. **Start development servers**
 
@@ -112,9 +117,9 @@ stack-pilot/
    - Click "New Project"
    - Import your repository
    - Set root directory to `apps/web`
-   - Add environment variables:
-     - `OPENAI_API_KEY`
-     - `NEXT_PUBLIC_APP_NAME`
+   - Add environment variables in Vercel dashboard:
+     - `GROQ_API_KEY` (your Groq API key)
+     - `NEXT_PUBLIC_APP_NAME` (optional, defaults to "Stack Pilot")
 
 3. **Deploy**
    - Vercel will automatically deploy on every push to main
@@ -164,7 +169,7 @@ stack-pilot/
 ### AI Package
 - ✅ Deterministic output
 - ✅ File structure generation
-- ✅ OpenAI integration
+- ✅ Groq integration (Llama 3.1 70B)
 - ✅ Type-safe configuration
 
 ## 🧪 Development Scripts
@@ -213,7 +218,7 @@ Built with:
 - [Next.js](https://nextjs.org/)
 - [Expo](https://expo.dev/)
 - [Turbo](https://turbo.build/)
-- [OpenAI](https://openai.com/)
+- [Groq](https://groq.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 
 ---

@@ -1,4 +1,4 @@
-import OpenAI from "openai";
+import Groq from "groq-sdk";
 import type { AppConfig, GeneratedFile, GenerationResult } from "./types";
 
 const SYSTEM_PROMPT = `You are a senior staff engineer responsible for generating a PRODUCTION-READY repository.
@@ -31,7 +31,7 @@ export async function generateApp(
   config: AppConfig,
   apiKey: string
 ): Promise<GenerationResult> {
-  const openai = new OpenAI({ apiKey });
+  const groq = new Groq({ apiKey });
 
   const userPrompt = `Generate a production-ready monorepo with the following configuration:
 
@@ -45,8 +45,8 @@ Tech Stack:
 
 Generate the complete file structure with all necessary files.`;
 
-  const completion = await openai.chat.completions.create({
-    model: "gpt-4-turbo-preview",
+  const completion = await groq.chat.completions.create({
+    model: "llama-3.1-70b-versatile",
     messages: [
       { role: "system", content: SYSTEM_PROMPT },
       { role: "user", content: userPrompt },
@@ -57,7 +57,7 @@ Generate the complete file structure with all necessary files.`;
 
   const response = completion.choices[0]?.message?.content;
   if (!response) {
-    throw new Error("No response from OpenAI");
+    throw new Error("No response from Groq");
   }
 
   try {

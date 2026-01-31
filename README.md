@@ -18,7 +18,7 @@ A production-ready monorepo demonstrating a modern Expo + Next.js + AI stack. Ge
 
 ### Backend / AI
 - **Edge-compatible API routes**
-- **Groq SDK** (Llama 3.1 70B)
+- **Groq SDK** (Llama 3.3 70B)
 - **Streaming-friendly architecture**
 
 ### Monorepo
@@ -169,7 +169,7 @@ stack-pilot/
 ### AI Package
 - ✅ Deterministic output
 - ✅ File structure generation
-- ✅ Groq integration (Llama 3.1 70B)
+- ✅ Groq integration (Llama 3.3 70B)
 - ✅ Type-safe configuration
 
 ## 🧪 Development Scripts

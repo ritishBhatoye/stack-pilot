@@ -6,6 +6,18 @@
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**", "dist/**", "build/**"]
     },
+    "web#build": {
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "@repo/ui#build": {
+      "outputs": []
+    },
+    "@repo/config#build": {
+      "outputs": []
+    },
+    "@repo/ai#build": {
+      "outputs": []
+    },
     "dev": {
       "cache": false,
       "persistent": true
